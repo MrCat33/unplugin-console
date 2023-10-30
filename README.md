@@ -1,4 +1,4 @@
-# unplugin-starter [![npm](https://img.shields.io/npm/v/unplugin-starter.svg)](https://npmjs.com/package/unplugin-starter)
+# unplugin-console [![npm](https://img.shields.io/npm/v/unplugin-starter.svg)](https://npmjs.com/package/unplugin-starter)
 
 [![Unit Test](https://github.com/sxzz/unplugin-starter/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/unplugin-starter/actions/workflows/unit-test.yml)
 
@@ -64,15 +64,3 @@ module.exports = {
 ```
 
 <br></details>
-
-## Sponsors
-
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg'/>
-  </a>
-</p>
-
-## License
-
-[MIT](./LICENSE) License © 2023-PRESENT [三咲智子](https://github.com/sxzz)

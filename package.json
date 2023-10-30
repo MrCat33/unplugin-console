@@ -11,15 +11,15 @@
     "webpack"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/sxzz/unplugin-starter#readme",
+  "homepage": "https://github.com/MrCat33/unplugin-console#readme",
   "bugs": {
-    "url": "https://github.com/sxzz/unplugin-starter/issues"
+    "url": "https://github.com/MrCat33/unplugin-console/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sxzz/unplugin-starter.git"
+    "url": "git+https://github.com/MrCat33/unplugin-console.git"
   },
-  "author": "三咲智子 <sxzz@sxzz.moe>",
+  "author": "Konata",
   "files": [
     "dist"
   ],
