@@ -1,7 +1,12 @@
-import { babelParse, walkAST, getLang, MagicString, generateTransform, DEFINE_RENDER } from '@vue-macros/common'
+import {
+  MagicString,
+  babelParse,
+  generateTransform,
+  getLang,
+  walkAST,
+} from '@vue-macros/common'
 import type * as t from '@babel/types'
 export function consoleConvert(code: string, id: string) {
-
   const lang = getLang(id)
   const program = babelParse(code, lang === 'vue' ? 'js' : lang)
 
@@ -27,7 +32,7 @@ export function consoleConvert(code: string, id: string) {
       nodes.push({
         parent,
         node,
-        arg: node.arguments[0]
+        arg: node.arguments[0],
       })
     },
   })

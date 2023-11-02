@@ -1,6 +1,11 @@
 import { createUnplugin } from 'unplugin'
+import {
+  type BaseOptions,
+  type MarkRequired,
+  createFilter,
+  detectVueVersion,
+} from '@vue-macros/common'
 import { consoleConvert } from './core'
-import { type BaseOptions, createFilter, detectVueVersion, MarkRequired } from '@vue-macros/common'
 
 export type Options = BaseOptions
 export type OptionsResolved = MarkRequired<Options, 'include' | 'version'>
@@ -31,4 +36,5 @@ export default createUnplugin<BaseOptions | undefined, false>(
         return consoleConvert(code, id)
       },
     }
-  })
+  }
+)
