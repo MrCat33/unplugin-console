@@ -1,24 +1,34 @@
 import { createUnplugin } from 'unplugin'
-import { createFilter } from '@rollup/pluginutils'
-import { type Options, resolveOption } from './core/options'
+import { consoleConvert } from './core'
+import { type BaseOptions, createFilter, detectVueVersion, MarkRequired } from '@vue-macros/common'
 
-export default createUnplugin<Options | undefined, false>((rawOptions = {}) => {
-  const options = resolveOption(rawOptions)
-  const filter = createFilter(options.include, options.exclude)
+export type Options = BaseOptions
+export type OptionsResolved = MarkRequired<Options, 'include' | 'version'>
 
-  const name = 'unplugin-starter'
+function resolveOption(options: Options): OptionsResolved {
+  const version = options.version || detectVueVersion()
   return {
-    name,
-    enforce: options.enforce,
-
-    transformInclude(id) {
-      return filter(id)
-    },
-
-    transform(code, id) {
-      // eslint-disable-next-line no-console
-      console.log(code, id)
-      return undefined
-    },
+    include: [],
+    version,
+    ...options,
   }
-})
+}
+
+export default createUnplugin<BaseOptions | undefined, false>(
+  (userOptions = {}) => {
+    const options = resolveOption(userOptions)
+    const filter = createFilter(options)
+    const name = 'unplugin-console'
+    return {
+      name,
+      enforce: 'post',
+
+      transformInclude(id) {
+        return filter(id)
+      },
+
+      transform(code, id) {
+        return consoleConvert(code, id)
+      },
+    }
+  })

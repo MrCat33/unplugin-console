@@ -1,5 +1,5 @@
 {
-  "name": "unplugin-starter",
+  "name": "unplugin-console",
   "version": "0.0.0",
   "packageManager": "pnpm@8.8.0",
   "description": "Description.",
@@ -69,12 +69,15 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest",
+    "play": "npm -C playground run dev",
     "typecheck": "tsc --noEmit",
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
+    "@babel/types": "^7.23.0",
     "@rollup/pluginutils": "^5.0.5",
+    "@vue-macros/common": "^1.8.0",
     "magic-string": "^0.30.4",
     "unplugin": "^1.5.0"
   },
