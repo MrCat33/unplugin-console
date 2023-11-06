@@ -5,6 +5,7 @@ import {
   getLang,
   walkAST,
 } from '@vue-macros/common'
+
 import type * as t from '@babel/types'
 export function consoleConvert(code: string, id: string) {
   const lang = getLang(id)
